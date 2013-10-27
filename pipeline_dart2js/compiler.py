@@ -13,7 +13,7 @@ class Dart2jsCompiler(SubProcessCompiler):
         if not outdated and not force:
             return  # No need to recompiled file
         
-        command = "%s %s --out=%s %s" % (
+        command = "%s %s -o %s %s" % (
             getattr(settings, 'PIPELINE_DART2JS_BINARY', '/usr/bin/env dart2js'),
             getattr(settings, 'PIPELINE_DART2JS_ARGUMENTS', ''),
             outfile,
